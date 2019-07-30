@@ -1,2 +1,1 @@
-# rute_button
-A simple button to be used fpr calculating expenses
+A simple button to be used for calculating expenses
