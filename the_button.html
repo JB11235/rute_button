@@ -74,11 +74,11 @@
         var amt3 = document.getElementById("amt3").value; 
         var res = parseInt(amt1) + parseInt(amt2) + parseInt(amt3)
         result =  "$ " + res
-        localStorage.setItem("wind_result", "$ " + result);
+        localStorage.setItem("wind_result", result);
         document.getElementById("result").innerHTML = result;
       }
 
-      if (localStorage.getItem("wind_result") != 'null'){
+      if (localStorage.getItem("wind_result") != 'NaN'){
         document.getElementById("result").innerHTML = localStorage.getItem("wind_result");
       }
   
