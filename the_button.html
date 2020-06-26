@@ -32,20 +32,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="example/submit.html">
-        <div>
-          <label for="f1">Wind Farm Capacity:</label>
-          <input id="amt1" class="form-control" name="f1" />
-        </div>
-        <div>
-          <label for="f2">another value </label>
-          <input id="amt2" class="form-control" type="number" name="f2" />
-        </div>
-        <div>
-          <label for="f3"> and this guy </label>
-          <input  id="amt3" class="form-control" type="number" name="f3" />
-        </div>
-      </form>
+        <form id="thisForm">
+          <div>
+            <label for="f1">A:</label>
+            <input id="amt1" class="form-control" type="number" name="f1" req="true" />
+          </div>
+          <div>
+            <label for="f2">B: </label>
+            <input id="amt2" class="form-control" type="number" name="f2" />
+          </div>
+          <div>
+            <label for="f3"> C: </label>
+            <input  id="amt3" class="form-control" type="number" name="f3" />
+          </div>
+        </form>
       </div>
 
      <div id="result" class="alert alert-primary text-center mx-3" role="alert">Results here
@@ -66,13 +66,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
     <script type="text/javascript">
+
       
-      function adder_up(){
-        var amt1 = document.getElementById("amt1").value;
-        var amt2 = document.getElementById("amt2").value;
-        var amt3 = document.getElementById("amt3").value; 
-        var res = parseInt(amt1) + parseInt(amt2) + parseInt(amt3)
+     function adder_up(){
+        let amt1 = document.getElementById("amt1").value;
+        let amt2 = document.getElementById("amt2").value;
+        let amt3 = document.getElementById("amt3").value; 
+        let res = parseInt(amt1) + parseInt(amt2) + parseInt(amt3)
         result =  "$ " + res
         localStorage.setItem("wind_result", result);
         document.getElementById("result").innerHTML = result;
@@ -81,7 +84,24 @@
       if (localStorage.getItem("wind_result") != 'NaN'){
         document.getElementById("result").innerHTML = localStorage.getItem("wind_result");
       }
-  
-    </script>
+      // $(document).ready(function(){
+
+        $("#thisForm").validate({
+          rules: {
+            // simple rule, converted to {required:true}
+            fi: "required",
+            // compound rule
+            email: {
+              required: true,
+              email: true
+            }
+          }
+});
+      
+        // $.validator.addMethod("req", function(value, element) {
+        //   return $.validator.methods['required'].call(this,value,element);
+        //  }, " This field is required.");
+      // });
+    </script> 
   </body>
 </html>
