@@ -1,55 +1,131 @@
-<div style="display:inline-block">
-  <form id="widget-form">
-    <div> 
-      <input id="i_1" class="form-control" type="number" name="f1" req="true" value=100
-       />
-       <label for="f1">MW, Size of Windfarm</label>
-    </div>
-    <div> 
-      <input id="i_2" class="form-control" type="number" name="f2" value=2.8 />
-      <label for="f2">MW Size of the generator </label>
-    </div>
-    <div>
-      <input  id="i_3" class="form-control" type="number" name="f3" value=160 />
-      <label for="f3">Cubic yards of concrete per MW (typical case)</label>
-    </div>
-    <div>
-      <input  id="i_4" class="form-control" type="number" name="f4" value=.06 />
-      <label for="f4">% Interest rate on debt</label>
-    </div>
-    <div>
-      <input  id="i_5" class="form-control" type="number" name="f5" value=8 />
-      <label for="f5">Months, Construction period</label>
-    </div>
-    <div>
-      <input  id="i_6" class="form-control" type="number" name="f6" value=1 />
-      <label for="f6">Month, speed to achieve commercial operation (faster)</label>
-    </div>
-    <div>
-      <input  id="i_7" class="form-control" type="number" name="f7" value=80 />
-      <label for="f7">k Cost to remove foundation after 30 years</label>
-    </div>
-    <button id="calculate" type="button">Calculate</button>
-  </form>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
 
-  <div id="bio_results">
-    <div><span id="a_1"></span> Total Concrete used w RUTE</div>
-    <div><span id="a_2"></span> Total Concrete used w conventional poured in the ground</div>
-    <div><span id="a_3"></span> Cubic yards of concrete saved</div>
-    <div><span id="a_4"></span> million pounds of concrete saved</div>
-    <div><span id="a_5"></span> million pounds of CO2 (cleaner) due to concrete saved</div>
+  input[type=number] {
+    border-radius: 5px;
+    border:1px solid grey;
+  }
+  .btn-calculate{
+    color: #fff;
+    background-color: #4B94BD;
+    border-color: #4485AB;
+
+  }
+  .btn-calculate:hover{
+    color: #fff;
+    background-color: #4485AB;
+  }
+
+  #form-card {
+    color: #fff;
+    background-color: #4B94BD;
+  }
+
+  #cash_results {
+
+  }
+
+  #bio_results {
+    background-color: #DFFF99;
+  }
+
+  .font1{
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .font2{
+    font-weight: bold;
+    font-size: medium;
+  }
+
+hr {
+
+  border: 0;
+  border-top: 2px solid rgb(122,208,27);
+  width: 97%;
+}
+
+
+
+</style>
+
+
+<div class="container m-2">
+  <div class="row">
+    <div class="col-12 col-sm-6 offset-sm-1">
+      <div class="card font2 shadow-sm p-2" id="form-card" >
+        <form id="widget-form" class>
+          <div class="form-inline mt-1"> 
+            <input id="i_1" type="number" min="0" max="1000" class="" name="f1" req="true" value=100
+             />
+             <label class="ml-2" for="f1">MW, Size of Windfarm</label>
+
+      </div>
+
+        
+          <div class="form-inline mt-1"> 
+            <input id="i_2" min="0" max="1000" class="" type="number" name="f2" value=2.8 />
+            <label class="ml-2" for="f2">MW Size of the generator </label>
+          </div>
+          <div class="form-inline mt-1">
+            <input  id="i_3" min="0" max="1000" class="" type="number" name="f3" value=160 />
+            <label class="ml-2" for="f3">Cubic yards of concrete per MW (typical case)</label>
+          </div>
+          <div class="form-inline mt-1">
+            <input  id="i_4" min="0" max="1000" class="" type="number" name="f4" value=.06 />
+            <label class="ml-2" for="f4">% Interest rate on debt</label>
+          </div>
+          <div class="form-inline mt-1">
+            <input  id="i_5" min="0" max="1000" class="" type="number" name="f5" value=8 />
+            <label class="ml-2" for="f5">Months, Construction period</label>
+          </div>
+          <div class="form-inline mt-1">
+            <input  id="i_6" min="0" max="1000" class="" type="number" name="f6" value=1 />
+            <label class="ml-2" for="f6">Month, speed to achieve commercial operation (faster)</label>
+          </div>
+          <div class="form-inline mt-1">
+            <input  id="i_7" min="0" max="1000" class="" type="number" name="f7" value=80 />
+            <label class="ml-2" for="f7">k Cost to remove foundation after 30 years</label>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3" style="margin-top:10%">
+      <button class="btn btn-lg btn-calculate" id="calculate" type="button">Calculate</button>
+    </div>
   </div>
-<hr>
-  <div id="cash_results">
-    <div><span id="b_1"></span> $m, Approximate total capital expense (capex)</div>
-    <div><span id="b_2"></span> $m, Foundation expense (~ 5% capex)</div>
-    <div><span id="b_3"></span> $m, Bridge loan interest savings due to (faster)</div>
-    <div><span id="b_4"></span> $m, Present value of second lifecyle in 30 years (stronger)</div>
-    <div><span id="b_5"></span> $m, Present value decommission savings 30 years (cleaner)</div>
-    <div><span id="b_6"></span> $m, Savings</div>
-    <div><span id="b_7"></span>% ROI, savings / foundation capex</div>
+  <div class="row mt-5">
+    <div class="col-12 col-sm-6 offset-sm-1">
+      <div class="text-center text-bold">
+        <h2>Savings:</h2>
+        <h2>Concrete and CO2</h2>
+      </div>
+      <div class="card font2 p-2" id="bio_results">
+        <div><span id="a_1"></span> Total Concrete used w RUTE</div>
+        <div><span id="a_2"></span> Total Concrete used w conventional poured in the ground</div>
+        <hr class="m-2">
+        <div><span id="a_3"></span> Cubic yards of concrete saved</div>
+        <div><span id="a_4"></span> million pounds of concrete saved</div>
+        <div><span id="a_5"></span> million pounds of CO2 (cleaner) due to concrete saved</div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card" id="cash_results">
+        <div><span id="b_1"></span> $m, Approximate total capital expense (capex)</div>
+        <div><span id="b_2"></span> $m, Foundation expense (~ 5% capex)</div>
+        <div><span id="b_3"></span> $m, Bridge loan interest savings due to (faster)</div>
+        <div><span id="b_4"></span> $m, Present value of second lifecyle in 30 years (stronger)</div>
+        <div><span id="b_5"></span> $m, Present value decommission savings 30 years (cleaner)</div>
+        <div><span id="b_6"></span> $m, Savings</div>
+        <div><span id="b_7"></span>% ROI, savings / foundation capex</div>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
@@ -58,7 +134,8 @@
   var lbs_concrete = 3900;
   var co2_yard = 400;
   var per_mw = 1.4;
-  $('#calculate').click(function() {
+
+  function calculate(){
     var a1 = Math.ceil($('#i_1').val()/$('#i_2').val() * cubic_yards);
     var a2 = $('#i_1').val() * $('#i_3').val();
 
@@ -79,5 +156,10 @@
     $('#b_5').html(b6);
     $('#b_6').html(parseFloat(b4) + parseFloat(b5) + parseFloat(b6))
     $('#b_7').html(((parseFloat(b4) + parseFloat(b5) + parseFloat(b6))/(b1 * 0.05)).toFixed(2) * 100)
-  })
+
+  }
+  $('#calculate').click(function() {
+    calculate()
+  });
+  calculate();
 </script>
