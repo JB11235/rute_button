@@ -72,7 +72,7 @@ hr {
             <label class="ml-2" for="f3">Cubic yards of concrete per MW (typical case)</label>
           </div>
           <div class="form-inline mt-1">
-            <input  id="i_4" min="0" max="1000" class="" type="number" name="f4" value=.06 />
+            <input  id="i_4" min="0" max="1000" class="" type="number" name="f4" value=6 />
             <label class="ml-2" for="f4">% Interest rate on debt</label>
           </div>
           <div class="form-inline mt-1">
@@ -151,9 +151,9 @@ hr {
     $('#a_5').html(((a2 - a1) * co2_yard/100000).toFixed(2))
 
     var b1 = $('#i_1').val() * per_mw;
-    var b4 = ($('#i_1').val() * per_mw * $('#i_4').val() * ($('#i_6').val()/12)).toFixed(2);
-    var b5 = ((b1 * 0.05) * 1000000/Math.pow((1 + $('#i_4').val()),30)/1000000).toFixed(2);
-    var b6 = (($('#i_7').val() * $('#i_1').val()/$('#i_2').val() * 1000)/Math.pow((1 + $('#i_4').val()),30)/1000000).toFixed(2);
+    var b4 = ($('#i_1').val() * per_mw * ($('#i_4').val() * 0.01) * ($('#i_6').val()/12)).toFixed(2);
+    var b5 = ((b1 * 0.05) * 1000000/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
+    var b6 = (($('#i_7').val() * $('#i_1').val()/$('#i_2').val() * 1000)/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
     $('#b_1').html(b1)
     $('#b_2').html(b1 * 0.05)
     $('#b_3').html(b4)
