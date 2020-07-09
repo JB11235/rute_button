@@ -1,20 +1,31 @@
     <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+
 <style>
+  .widget-container {
+    font-family: 'Play', serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
   input[type=number] {
     border-radius: 5px;
     border:1px solid grey;
+    color: #999;
   }
   .btn-calculate{
+    width: inherit;
+    height: 60px;
     color: #fff;
-    background-color: #4B94BD;
-    border-color: #4485AB;
+    background-color: #EB7D14;
+    border-color: #D47013;
+    text-align:center;
 
   }
   .btn-calculate:hover{
     color: #fff;
-    background-color: #4485AB;
+    background-color: #D47013;
   }
 
   #form-card {
@@ -23,8 +34,7 @@
   }
 
   #cash_results {
-
-    background-color: #111;
+    background-color: #2F2E2E;
     color: #fff;
   }
 
@@ -33,13 +43,23 @@
   }
 
   .font1{
-    font-weight: bold;
-    font-size: large;
+    font-size: 36px;
   }
 
   .font2{
-    font-weight: bold;
-    font-size: medium;
+    font-size: 28px;
+  }
+
+  .font4 {
+    font-size: 25px;
+  }
+
+  .font5 {
+    font-size: 25px;
+  }
+
+  .font6 {
+    font-size: 22px;
   }
 
   .green_line {
@@ -49,10 +69,12 @@
   }
 </style>
 
-<div class="container m-2">
+<div class="container m-2 widget-container">
   <div class="row">
     <div class="col-12 col-sm-6 offset-sm-1">
-      <div class="card font2 shadow-lg p-2" id="form-card" >
+      <div class="font1 text-center text-uppercase">Input Your Numbers</div>
+      <div class="card shadow-lg p-2" id="form-card" >
+
         <form id="widget-form" class>
           <div class="form-inline mt-1"> 
             <input id="i_1" type="number" min="0" max="1000" class="text-right" name="f1" req="true" value=100
@@ -86,11 +108,41 @@
         </form>
       </div>
     </div>
-    <div class="col-sm-3" style="margin-top:10%">
-      <button class="btn btn-lg btn-calculate shadow-lg " id="calculate" type="button">Calculate</button>
+    <div class="col-sm-3 col-12" >
+      <div class="step_one" style="margin-top: 60px;">
+
+          <div class="d-flex align-self-baseline">
+            <div class="d-sm-inline d-none">
+              <svg width="70" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" x2="60" y1="20" y2="20" stroke="black" stroke-width="3"/>
+                <polygon points="10,20 30,10 30,30"/>
+              </svg>
+            </div>
+            <div class="d-sm-inline font2">step one</div>
+          </div>
+        <div class="card card-body p-1">
+          Replace the example numbers to your left with your own.
+        </div>
+      </div>
+      <div class="step_two" style="margin-top: 20px;">
+        <div class="font2 text-center">step two</div>
+        <div class="text-center d-none d-sm-block">
+          <svg width="40" height="70" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" x2="20" y1="1" y2="50" stroke="black" stroke-width="3"/>
+            <polygon points="20,60 10,40 30,40"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card btn-calculate shadow-lg font1 text-center" id="calculate" type="button">Calculate</div>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="font1 text-uppercase text-center">Example Savings:</div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12 col-sm-5 offset-sm-1">
       <div class="text-center text-bold">
         <h2>Savings:</h2>
