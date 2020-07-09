@@ -5,7 +5,7 @@
 <style>
   .widget-container {
     font-family: 'Play', serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
   }
 
@@ -43,38 +43,51 @@
   }
 
   .font1{
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .font2{
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .font4 {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .font5 {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .font6 {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .green_line {
     border: 0;
+    border-top: 2px solid #DFFF99;
+    width: 97%;
+  }
+
+  .green_line2 {
+    border: 0;
     border-top: 2px solid rgb(122,208,27);
     width: 97%;
   }
+
+  .text_green {
+    color: #DFFF99;
+  }
+
+  .vertical-center {
+   
+  }
 </style>
 
-<div class="container m-2 widget-container">
+<div class="container  widget-container">
   <div class="row">
-    <div class="col-12 col-sm-6 offset-sm-1">
+    <div class="col-12 col-sm-6 ">
       <div class="font1 text-center text-uppercase">Input Your Numbers</div>
       <div class="card shadow-lg p-2" id="form-card" >
-
         <form id="widget-form" class>
           <div class="form-inline mt-1"> 
             <input id="i_1" type="number" min="0" max="1000" class="text-right" name="f1" req="true" value=100
@@ -108,11 +121,10 @@
         </form>
       </div>
     </div>
-    <div class="col-sm-3 col-12" >
+    <div class="col-sm-4 col-12" >
       <div class="step_one" style="margin-top: 60px;">
-
           <div class="d-flex align-self-baseline">
-            <div class="d-sm-inline d-none">
+            <div class="d-sm-inline d-none"  >
               <svg width="70" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <line x1="20" x2="60" y1="20" y2="20" stroke="black" stroke-width="3"/>
                 <polygon points="10,20 30,10 30,30"/>
@@ -127,9 +139,9 @@
       <div class="step_two" style="margin-top: 20px;">
         <div class="font2 text-center">step two</div>
         <div class="text-center d-none d-sm-block">
-          <svg width="40" height="70" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <line x1="20" x2="20" y1="1" y2="50" stroke="black" stroke-width="3"/>
-            <polygon points="20,60 10,40 30,40"/>
+          <svg width="40" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" x2="20" y1="1" y2="40" stroke="black" stroke-width="3"/>
+            <polygon points="20,45 10,32 30,32"/>
           </svg>
         </div>
       </div>
@@ -137,52 +149,54 @@
       <div class="card btn-calculate shadow-lg font1 text-center" id="calculate" type="button">Calculate</div>
     </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-12">
       <div class="font1 text-uppercase text-center">Example Savings:</div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-sm-5 offset-sm-1">
-      <div class="text-center text-bold">
-        <h2>Savings:</h2>
-        <h2>Concrete and CO2</h2>
-      </div>
-      <div class="card shadow-lg font2 p-2" id="bio_results">
-        <div class="row">
-          <div class="col-2 d-flex flex-nowrap"><span id="a_1"></span></div>
-          <div class="col-10"> Total Concrete used w RUTE</div>
+  <div class="row" style="min-height:500px">
+    <div class="col-12 col-sm-5 ">
+      <div style="max-width:350px">
+        <div class="text-center text-bold">
+          <div class="font1 text-uppercase">Concrete and CO2</div>
         </div>
-        <div class="row">
-          <div class="col-2 d-flex flex-nowrap"><span id="a_2"></span></div>
-          <div class="col-10"> Total Concrete used w conventional poured in the ground</div>
-        </div>
-        <hr class="m-2 green_line">
-        <div class="font1">
+        <div class="card shadow-lg font5 p-2" id="bio_results">
           <div class="row">
-            <div class="col-2 d-flex flex-nowrap"><span id="a_3"></span></div>
-            <div class="col-10"> Cubic yards of concrete saved</div>
+            <div class="col-2 d-flex flex-nowrap"><span id="a_1"></span></div>
+            <div class="col-10"> Total Concrete used w RUTE</div>
           </div>
           <div class="row">
-            <div class="col-2 d-flex flex-nowrap"><span id="a_4"></span></div>
-            <div class="col-10"> million pounds of concrete saved</div>
+            <div class="col-2 d-flex flex-nowrap"><span id="a_2"></span></div>
+            <div class="col-10"> Total Concrete used w conventional poured in the ground</div>
           </div>
-          <div class="row">
-            <div class="col-2 d-flex flex-nowrap"><span id="a_5"></span></div>
-            <div class="col-10"> million pounds of CO2 (cleaner) due to concrete saved</div>
+            <div class="row">
+              <div class="col-2 d-flex flex-nowrap"><span id="a_3"></span></div>
+              <div class="col-10"> Cubic yards of concrete saved</div>
+            </div>
+            <hr class="m-2 green_line2">
+          <div class="font3">
+            <div class="row">
+              <div class="col-2 d-flex flex-nowrap"><span id="a_4"></span></div>
+              <div class="col-10"> million pounds of concrete saved</div>
+            </div>
+            <div class="row">
+              <div class="col-2 d-flex flex-nowrap"><span id="a_5"></span></div>
+              <div class="col-10"> million pounds of CO2 (cleaner) due to concrete saved</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-5">
-      <div style="max-width: 300px;">
+    <div class="col-sm-5 col-12">
+      <div style="">
         <div class="text-center text-bold">
-          <h2>Savings: In Dollars</h2>
+          <div class="font1 text-uppercase">In Dollars</div>
         </div>
-        <div class="card px-1 font2 shadow-lg" id="cash_results">
+        <div class="card px-3 py-5 font5 shadow-lg" id="cash_results">
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap">$<span id="b_1"></span>m</div>
-            <div class="col-9"> Approximate total capital expense (capex)</div>
+            <div class="col-3 d-flex flex-nowrap vertical-center">$<span id="b_1"></span>m</div>
+            <div class="col-9 "> Approximate total capital expense (capex)</div>
           </div>
           <div class="row">
             <div class="col-3 d-flex flex-nowrap">$<span id="b_2"></span>m</div>
@@ -197,18 +211,20 @@
             <div class="col-9"> Present value of second lifecyle in 30 years (stronger)</div>
           </div>
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap">$<span id="b_5"></span>m</div>
+            <div class="col-3 d-flex flex-nowrap ">$<span id="b_5"></span>m</div>
             <div class="col-9"> Present value decommission savings 30 years (cleaner)</div>
           </div>
-          <hr class="m-2 green_line">
-          <div class="font1">
+          <hr class="m-2 green_line" style="color:#DFFF99;">
+          <div class="font1 text_green">
             <div class="row">
-              <div class="col-3 d-flex flex-nowrap">$<span id="b_6"></span>m</div>
-              <div class="col-9"> Savings</div>
+              <div class="col-12">
+                <div class="text-center" >$<span id="b_6"></span>&nbsp;Million Saved</div>
+              </div>
             </div>
             <div class="row">
-              <div class="col-3 d-flex flex-nowrap"><span id="b_7"></span>%</div>
-              <div class="col-9"> ROI, savings / foundation capex</div>
+              <div class="col-12 font4">
+                <div class="text-center"><span claass="text-right" id="b_7"></span>% ROI Foundation Capex</div>
+              </div>
             </div>
           </div>
         </div>
