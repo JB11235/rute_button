@@ -20,7 +20,7 @@
     color: #fff;
     background-color: #EB7D14;
     border-color: #D47013;
-    text-align:center;
+    padding-top: 8px;
 
   }
   .btn-calculate:hover{
@@ -100,7 +100,7 @@
           </div>
           <div class="form-inline mt-1">
             <input  id="i_3" min="0" max="1000" class="text-right" type="number" name="f3" value=160 />
-            <label class="ml-2" for="f3">Cubic yards of concrete per MW (typical case)</label>
+            <label class="ml-2" for="f3">cy Concrete per MW</label>
           </div>
           <div class="form-inline mt-1">
             <input  id="i_4" min="0" max="1000" class="text-right" type="number" name="f4" value=6 />
@@ -108,15 +108,15 @@
           </div>
           <div class="form-inline mt-1">
             <input  id="i_5" min="0" max="1000" class="text-right" type="number" name="f5" value=8 />
-            <label class="ml-2" for="f5">Months, Construction period</label>
+            <label class="ml-2" for="f5">Months, Construction period, conventional</label>
           </div>
           <div class="form-inline mt-1">
-            <input  id="i_6" min="0" max="1000" class="text-right" type="number" name="f6" value=1 />
-            <label class="ml-2" for="f6">Month, speed to achieve commercial operation (faster)</label>
+            <input  id="i_6" min="0" max="1000" class="text-right" type="number" name="f6" value=6 />
+            <label class="ml-2" for="f6">Months, Construction period w/RUTE</label>
           </div>
           <div class="form-inline mt-1">
             <input  id="i_7" min="0" max="1000" class="text-right" type="number" name="f7" value=80 />
-            <label class="ml-2" for="f7">k Cost to remove foundation after 30 years</label>
+            <label class="ml-2" for="f7">k Cost to remove conventional foundation</label>
           </div>
         </form>
       </div>
@@ -150,39 +150,35 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-12">
-      <div class="font1 text-uppercase text-center">Example Savings:</div>
-    </div>
-  </div>
-  <div class="row" style="min-height:500px">
+  <div class="row" style="">
     <div class="col-12 col-sm-5 ">
       <div style="max-width:350px">
         <div class="text-center text-bold">
-          <div class="font1 text-uppercase">Concrete and CO2</div>
+          <div class="font4 text-uppercase">Environmental Benefits</div>
         </div>
-        <div class="card shadow-lg font5 p-2" id="bio_results">
+        <div class="card shadow-lg font6 p-2" id="bio_results">
           <div class="row">
-            <div class="col-2 d-flex flex-nowrap"><span id="a_1"></span></div>
-            <div class="col-10"> Total Concrete used w RUTE</div>
+            <div class="col-3 d-flex flex-nowrap"><span id="a_2"></span>&nbsp;cy</div>
+            <div class="col-9">Concrete in conventional foundations</div>
           </div>
           <div class="row">
-            <div class="col-2 d-flex flex-nowrap"><span id="a_2"></span></div>
-            <div class="col-10"> Total Concrete used w conventional poured in the ground</div>
+            <div class="col-3 d-flex flex-nowrap"><span id="a_1"></span>&nbsp;cy</div>
+            <div class="col-9">Total Concrete used w RUTE</div>
           </div>
-            <div class="row">
-              <div class="col-2 d-flex flex-nowrap"><span id="a_3"></span></div>
-              <div class="col-10"> Cubic yards of concrete saved</div>
-            </div>
-            <hr class="m-2 green_line2">
+          <hr class="m-2 green_line2">
+          <div class="row">
+            <div class="col-3 d-flex flex-nowrap"><span id="a_3"></span>&nbsp;cy</div>
+            <div class="col-9">Cubic yards of concrete saved</div>
+          </div>
+          <br>
           <div class="font3">
             <div class="row">
-              <div class="col-2 d-flex flex-nowrap"><span id="a_4"></span></div>
-              <div class="col-10"> million pounds of concrete saved</div>
+              <div class="col-3 d-flex flex-nowrap"><span id="a_4"></span>&nbsp;lbs</div>
+              <div class="col-9">Concrete saved</div>
             </div>
             <div class="row">
-              <div class="col-2 d-flex flex-nowrap"><span id="a_5"></span></div>
-              <div class="col-10"> million pounds of CO2 (cleaner) due to concrete saved</div>
+              <div class="col-3 d-flex flex-nowrap"><span id="a_5"></span>&nbsp;lbs</div>
+              <div class="col-9">CO2 saved</div>
             </div>
           </div>
         </div>
@@ -191,28 +187,33 @@
     <div class="col-sm-5 col-12">
       <div style="">
         <div class="text-center text-bold">
-          <div class="font1 text-uppercase">In Dollars</div>
+          <div class="font4 text-uppercase">Economic Benefits</div>
         </div>
-        <div class="card px-3 py-5 font5 shadow-lg" id="cash_results">
+        <div class="card p-2 font6 shadow-lg" id="cash_results">
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap vertical-center">$<span id="b_1"></span>m</div>
-            <div class="col-9 "> Approximate total capital expense (capex)</div>
+            <div class="col-3 d-flex flex-nowrap">$<span id="b_1"></span>&nbsp;m</div>
+            <div class="col-9 ">Capital expense (capex)</div>
           </div>
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap">$<span id="b_2"></span>m</div>
-            <div class="col-9"> Foundation expense (~ 5% capex)</div>
+            <div class="col-3 d-flex flex-nowrap">$<span id="b_2"></span>&nbsp;m</div>
+            <div class="col-9">Foundation expense (~ 5% capex)</div>
           </div>
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap">$<span id="b_3"></span>m</div>
-            <div class="col-9"> Bridge loan interest savings due to (faster)</div>
+            <div class="col-3 d-flex flex-nowrap">$<span id="b_3"></span>&nbsp;m</div>
+            <div class="col-9">Bridge loan interest expense</div>
+          </div>
+          <hr class="green_line">
+          <div class="row">
+            <div class="col-3 d-flex flex-nowrap">$<span id="b_8"></span>&nbsp;m</div>
+            <div class="col-9">Savings, Bridge loan interest - faster</div>
           </div>
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap">$<span id="b_4"></span>m</div>
-            <div class="col-9"> Present value of second lifecyle in 30 years (stronger)</div>
+            <div class="col-3 d-flex flex-nowrap">$<span id="b_4"></span>&nbsp;m</div>
+            <div class="col-9">Savings of second lifecycle - stronger</div>
           </div>
           <div class="row">
-            <div class="col-3 d-flex flex-nowrap ">$<span id="b_5"></span>m</div>
-            <div class="col-9"> Present value decommission savings 30 years (cleaner)</div>
+            <div class="col-3 d-flex flex-nowrap ">$<span id="b_5"></span>&nbsp;m</div>
+            <div class="col-9">Savings of decommissioning - cleaner</div>
           </div>
           <hr class="m-2 green_line" style="color:#DFFF99;">
           <div class="font1 text_green">
@@ -223,7 +224,7 @@
             </div>
             <div class="row">
               <div class="col-12 font4">
-                <div class="text-center"><span claass="text-right" id="b_7"></span>% ROI Foundation Capex</div>
+                <div class="text-center"><span claass="text-right" id="b_7"></span>% ROI, savings / foundation expense</div>
               </div>
             </div>
           </div>
@@ -245,27 +246,29 @@
     var a1 = Math.ceil($('#i_1').val()/$('#i_2').val() * cubic_yards);
     var a2 = $('#i_1').val() * $('#i_3').val();
 
-    $('#a_1').html(a1.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))
-    $('#a_2').html(a2.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))
-    $('#a_3').html((a2 - a1).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') )
-    $('#a_4').html( ((a2 - a1) * lbs_concrete/1000000).toFixed(2) )
-    $('#a_5').html(((a2 - a1) * co2_yard/100000).toFixed(2))
+    $('#a_1').html(a1.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+    $('#a_2').html(a2.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+    $('#a_3').html((a2 - a1).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') );
+    $('#a_4').html( ((a2 - a1) * lbs_concrete/1000000).toFixed(2) );
+    $('#a_5').html(((a2 - a1) * co2_yard/100000).toFixed(2));
 
     var b1 = $('#i_1').val() * per_mw;
-    var b4 = ($('#i_1').val() * per_mw * ($('#i_4').val() * 0.01) * ($('#i_6').val()/12)).toFixed(2);
+    var b4 = ($('#i_1').val() * per_mw * $('#i_4').val()/100 * ($('#i_5').val()/12)).toFixed(2);
     var b5 = ((b1 * 0.05) * 1000000/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
     var b6 = (($('#i_7').val() * $('#i_1').val()/$('#i_2').val() * 1000)/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
-    $('#b_1').html(b1)
-    $('#b_2').html(b1 * 0.05)
-    $('#b_3').html(b4)
-    $('#b_4').html(b5)
+    var b7 = b4 * ($('#i_5').val() - $('#i_6').val())/$('#i_5').val(); 
+    $('#b_1').html(b1);
+    $('#b_2').html(b1 * 0.05);
+    $('#b_3').html(b4);
+    $('#b_4').html(b5);
     $('#b_5').html(b6);
-    $('#b_6').html((parseFloat(b4) + parseFloat(b5) + parseFloat(b6)).toFixed(2))
-    $('#b_7').html(((parseFloat(b4) + parseFloat(b5) + parseFloat(b6))/(b1 * 0.05)).toFixed(2) * 100)
+    $('#b_6').html((parseFloat(b5) + parseFloat(b6) + parseFloat(b7)).toFixed(2));
+    $('#b_7').html((((parseFloat(b5) + parseFloat(b6) + parseFloat(b7))/(b1 * 0.05)) * 100).toFixed(2));
+    $('#b_8').html(b7);
 
-  }
+  } 
   $('#calculate').click(function() {
-    calculate()
+    calculate();
   });
   calculate();
 </script>
