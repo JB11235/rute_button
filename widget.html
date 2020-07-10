@@ -123,15 +123,15 @@
           </div>
           <div class="form-inline mt-1">
             <input  id="i_5" min="0" max="1000" class="text-right" type="number" name="f5" value=8 />
-            <label class="ml-2" for="f5">mo, Construction period, conventional</label>
+            <label class="ml-2" for="f5">Months, Construction period, conventional</label>
           </div>
           <div class="form-inline mt-1">
             <input  id="i_6" min="0" max="1000" class="text-right" type="number" name="f6" value=6 />
-            <label class="ml-2" for="f6">mo, Construction period w/RUTE</label>
+            <label class="ml-2" for="f6">Months, Construction period w/RUTE</label>
           </div>
           <div class="form-inline mt-1">
             <input  id="i_7" min="0" max="1000" class="text-right" type="number" name="f7" value=80 />
-            <label class="ml-2" for="f7">$k Cost to remove conventional foundation</label>
+            <label class="ml-2" for="f7">k Cost to remove conventional foundation</label>
           </div>
         </form>
       </div>
@@ -171,7 +171,7 @@
         <div class="text-center text-bold">
           <div class="font4 text-uppercase">Environmental Benefits</div>
         </div>
-        <div class="card shadow-lg font6 p-2 " id="bio_results" style="height:310px">
+        <div class="card shadow-lg font6 p-2 " id="bio_results" style="min-height:310px">
           <div class="row mt-4">
             <div class="col-3 d-flex flex-nowrap"><span id="a_2"></span>&nbsp;cy</div>
             <div class="col-9">Concrete in conventional foundations</div>
@@ -185,8 +185,6 @@
             <div class="col-3 d-flex flex-nowrap"><span id="a_3"></span>&nbsp;cy</div>
             <div class="col-9">Cubic yards of concrete saved</div>
           </div>
-          <br>
-          <br>
           <br>
           <div class="font1">
             <div class="row">
@@ -259,7 +257,7 @@
   var cubic_yards = 275;
   var lbs_concrete = 3900;
   var co2_yard = 400;
-  var per>mw = 1.4;
+  var per_mw = 1.4;
 
   function calculate(){
     var a1 = Math.ceil($('#i_1').val()/$('#i_2').val() * cubic_yards);
@@ -271,8 +269,8 @@
     $('#a_4').html( ((a2 - a1) * lbs_concrete/1000000).toFixed(2) );
     $('#a_5').html(((a2 - a1) * co2_yard/100000).toFixed(2));
 
-    var b1 = $('#i_1').val() * per>mw;
-    var b4 = ($('#i_1').val() * per>mw * $('#i_4').val()/100 * ($('#i_5').val()/12)).toFixed(2);
+    var b1 = $('#i_1').val() * per_mw;
+    var b4 = ($('#i_1').val() * per_mw * $('#i_4').val()/100 * ($('#i_5').val()/12)).toFixed(2);
     var b5 = ((b1 * 0.05) * 1000000/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
     var b6 = (($('#i_7').val() * $('#i_1').val()/$('#i_2').val() * 1000)/Math.pow((1 + $('#i_4').val() * 0.01),30)/1000000).toFixed(2);
     var b7 = b4 * ($('#i_5').val() - $('#i_6').val())/$('#i_5').val(); 
